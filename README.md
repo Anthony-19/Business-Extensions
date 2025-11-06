@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+##Business Browser Extensions
 
-## Getting Started
+A dynamic React & Next.js application for managing a list of browser extensions, allowing users to view, toggle active status, filter, and remove extensions.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is designed to manage browser extensions in a clean, user-friendly interface. Users can:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- See a list of all extensions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Filter extensions by All, Active, or Inactive.
 
-## Learn More
+- Toggle the active status of any extension.
 
-To learn more about Next.js, take a look at the following resources:
+- Remove an extension from the list.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- All state updates are handled dynamically using React’s useState and useEffect, ensuring the UI stays in sync with user interactions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+##Features
 
-## Deploy on Vercel
+- Dynamic Data Rendering: Loads extension data from a JSON file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Filter Extensions: Easily switch between All, Active, and Inactive extensions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Toggle Active Status: Update the active/inactive state of an extension in real-time.
+
+- Remove Extensions: Remove any extension and update the list instantly.
+
+- Responsive Design: Layout works well on desktop and mobile.
+
+
+##Usage
+
+- View Extensions: All extensions are listed with their name, description, and logo.
+
+- Filter: Click All, Active, or Inactive to filter the list.
+
+- Toggle: Click the toggle button next to an extension to change its active status.
+
+- Remove: Click the Remove button to delete an extension from the list.
+
+##Technologies Used
+
+- React (with Hooks)
+
+- Next.js (App Router)
+
+- CSS Modules for scoped styling
+
+- Next/Image for optimized images
+
+- JavaScript ES6+

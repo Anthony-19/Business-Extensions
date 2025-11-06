@@ -1,141 +1,264 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+:root {
+--neutral-900: hsl(227, 75%, 14%);
+--neutral-800: hsl(226, 25%, 17%);
+--neutral-700: hsl(225, 23%, 24%);
+--neutral-600: hsl(226, 11%, 37%);
+--neutral-300: hsl(0, 0%, 78%);
+--neutral-200: hsl(217, 61%, 90%);
+--neutral-100: hsl(0, 0%, 93%);
+--neutral-0: hsl(200, 60%, 99%);
 
-  --text-primary: #000;
-  --text-secondary: #666;
+--red-400: hsl(3, 86%, 64%);
+--red-500: hsl(3, 71%, 56%);
+--red-700: hsl(3, 77%, 44%);
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+--light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+--dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
-
-.main {
-  display: flex;
+.container {
+  background: var(--dark-gradient);
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  color: var(--neutral-100);
+  padding: 2rem 4rem 3rem 4rem;
+  
+}
+
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+.header{
+  width: 100%;
+  background-color: var(--neutral-800);
+  padding: 0.4rem;
+  border-radius: 12px;
+}
+
+.headerLogo{
+   display: flex;
+  align-items: center;
   justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
 }
 
-.intro {
+.iconSunContainer{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.1rem;
+  border-radius: 10px;
+  background-color: var(--neutral-700);
+  cursor: pointer;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
+.extensionListContainer{
+  margin: 3.5rem 0 1.5rem 0;
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+}
+.extensionListHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.extensionListBtn{
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.extensionListHeader button{
+  font-family: var(--font-noto-sans);
+  color: var(--neutral-100);
+  font-weight: 400;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.95rem;
+  background: none;
+  outline: none;
+  border: none;
+  background-color: var(--neutral-700);
+  /* border: none; */
+  cursor: pointer;
+  box-shadow: 0 0 1.5px var(--neutral-0);
 }
 
-.ctas a {
-  display: flex;
+.extensionListHeader button:hover {
+  color: var(--neutral-700);
+  background-color: var(--red-400);
+}
+.extensionListHeader button:focus {
+  color: var(--neutral-700);
+  background-color: var(--red-400);
+}
+
+.extensionCardBody{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+  gap: 1rem;
+  
+}
+
+.extensionCardsContainer{
+  background-color: var(--neutral-800);
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 1.5px var(--neutral-0);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  /* height: 12rem; */
+}
+
+.extensionCard{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  column-gap: 1rem;
+  /* background-color: green; */
+}
+.extensionCardTitle{
+  font-size: 1rem;
+  /* background-color: green; */
+}
+
+.extensionCardDescription{
+  font-size: 0.8rem;
+  color: var(--neutral-200);
+  margin-top: 0.5rem;
+}
+
+.extensionCardActions{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.extensionCardButton{
+  font-family: var(--font-noto-sans);
+  color: var(--neutral-100);
+  font-weight: 400;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.95rem;
+  background: none;
+  outline: none;
+  border: none;
+  /* background-color: var(--neutral-700); */
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  box-shadow: 0 0 1.5px var(--neutral-0);
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.extensionCardBtnToggle{
+  width: 100%;
+  max-width: 45px;
+  height: 20px;
+  background-color: var(--neutral-600);
+  
+  border: none;
+  outline: none;
+  box-shadow: 0 0 1.5px var(--neutral-0);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.extensionCardBtnToggle span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  display: block;
+  transition: all 0.3s ease;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.extensionCardBtnToggle.active{
+   background-color: var(--red-400);
+  border: none;
+  outline: none;
+  box-shadow: 0 0 1.5px var(--neutral-0);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.extensionCardBtnToggle.active span {
+  transform: translateX(130%);
+   transition: all 0.3s ease;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+@media screen and (max-width: 1040px) {
+  .extensionCardsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+  /* height: 11rem; */
+  height: 100%;
+}
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+@media screen and (max-width: 977px) {
+  .extensionCardBody{
+    grid-template-columns: repeat(2,1fr);
   }
 
-  .intro {
-    gap: 16px;
+}
+@media screen and (max-width: 673px) {
+  .extensionCardBody{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .extensionCardsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+}
+}
+@media screen and (max-width: 613px) {
+.extensionListContainer{
+  margin: 1rem 0 1.5rem 0rem;
+}
+  .extensionListHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  .extensionCardBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
   }
+  .extensionCardsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+@media screen and (max-width: 428px) {
+.container {
+  background: var(--dark-gradient);
+  min-height: 100vh;
+  width: 100%;
+  color: var(--neutral-100);
+  padding: 2rem 2rem 3rem 2rem;
+  
+}
 }
