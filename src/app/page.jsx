@@ -8,6 +8,27 @@ export default function Home() {
   const [datas, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
   const [currentFilterType, setCurrentFilterType] = useState('all');
+  //  const [theme, setTheme] = useState(true)
+ const [theme, setTheme] = useState(null)
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme !== null) {
+      setTheme(JSON.parse(savedTheme));
+    } else {
+      setTheme(true); // default to light theme
+    }
+  }, []);
+
+    useEffect(() =>{
+    localStorage.setItem('theme', JSON.stringify(theme))
+  }, [theme]) 
+  
+
+  const handleTheme = () => {
+    setTheme(prevTheme => !prevTheme)
+
+  }
 
   const handleToggle = (idx) => {
     // setFilterData(prevData => 
@@ -87,21 +108,17 @@ export default function Home() {
 
     fetchData();
   }, []);
+  
+ // While theme is still loading, render nothing or a placeholder
+  // if (theme === null) {
+  //   return <div className={styles.container}></div>;
+  // }
 
-  //  useEffect(() => {
-  //   setFilterData(datas);
-  // }, [datas]);
-
-  // useEffect(() => {
-  //   setFilterData(prevFilteredData =>
-  //     prevFilteredData.map(item => {
-  //       datas.find((d) => item.name === d.name)
-  //     })
-  //   )
-  // }, [datas])
-
+  if (theme === null) {
+    return <div style={{ visibility: "hidden" }} />;
+  }
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${theme === false ? styles.darkMode : ""}`}>
       <main className={styles.main}>
         <section className={styles.header}>
           <div className={styles.headerLogo}>
@@ -114,9 +131,9 @@ export default function Home() {
               //  style={{ backgroundColor: 'red' }}
             />
 
-            <div className={styles.iconSunContainer}>
+            <div className={styles.iconSunContainer} onClick={handleTheme}>
               <Image
-                src="/assets/images/icon-sun.svg"
+                src={theme ? "/assets/images/icon-sun.svg" : "/assets/images/icon-moon.svg"}
                 alt="Logo"
                 width={40}
                 height={20}

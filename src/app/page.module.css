@@ -15,6 +15,29 @@
 --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
 --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
+
+.darkMode{
+  --neutral-900: hsl(227, 75%, 14%);
+
+
+--neutral-600: hsl(226, 11%, 37%);
+--neutral-300: hsl(0, 0%, 78%);
+
+
+
+
+--red-400: hsl(3, 86%, 64%);
+--red-500: hsl(3, 71%, 56%);
+--red-700: hsl(3, 77%, 44%);
+
+/* --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%); */
+--neutral-200: hsl(226, 11%, 37%);
+--neutral-0: hsl(226, 11%, 37%);
+--neutral-700: hsl(0, 0%, 93%);
+--neutral-100: hsl(227, 75%, 14%);
+--neutral-800: hsl(200, 60%, 99%);
+--dark-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+}
 .container {
   background: var(--dark-gradient);
   min-height: 100vh;
@@ -84,7 +107,7 @@
   background: none;
   outline: none;
   border: none;
-  background-color: var(--neutral-700);
+  background-color: var(--neutral-800);
   /* border: none; */
   cursor: pointer;
   box-shadow: 0 0 1.5px var(--neutral-0);
@@ -159,6 +182,7 @@
   /* background-color: var(--neutral-700); */
   cursor: pointer;
   box-shadow: 0 0 1.5px var(--neutral-0);
+  font-weight: 600;
 }
 
 .extensionCardBtnToggle{
